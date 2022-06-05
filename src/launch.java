@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class launch {
     static Integer James(){
@@ -8,19 +9,21 @@ public class launch {
             Integer localInt = Integer.parseInt(localString);
             return localInt;
         } catch (NumberFormatException e) {
-            // TODO Auto-generated catch block
+            // Will add nice error message at a later date, maybe loop?
             e.printStackTrace();
         }
         return null;
     }
     public static void main(String[] args) throws Exception {
         //System.out.println("Hello, World!");
-        Integer defInt= James();
+        Integer defInt = James();
         System.out.println("The method has returned " + defInt + ".");
         String[][] mainArray = new String[defInt][defInt];
+        Random localRandom = new Random();
         for(int x = 0; x< mainArray.length;x++){
             for(int y = 0;y<mainArray[x].length;y++){
-                mainArray[x][y] = "0";
+                Integer localInt = localRandom.nextInt(2 - 0) + 0;
+                mainArray[x][y] = localInt.toString();
             }
         }
         StringBuilder localBuilder = new StringBuilder();
