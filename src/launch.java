@@ -10,6 +10,7 @@ public class launch {
             return localInt;
         } catch (NumberFormatException e) {
             // Will add nice error message at a later date, maybe loop?
+            System.out.println("Error formatting numbers, make sure you entered an integer value.");
             e.printStackTrace();
         }
         return null;
