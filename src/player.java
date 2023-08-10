@@ -1,9 +1,12 @@
-
+import java.util.Scanner;
 
 public class player extends Life{
     public Life Player(){
-        Life player = new Life();
-        return player;
+        try (Scanner localScanner = new Scanner(System.in)) {
+            Life player = new Life();
+            String name = localScanner.nextLine();
+            player.addName(name);
+            return player;
+        }
     }
-    
 }

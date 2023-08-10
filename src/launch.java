@@ -4,8 +4,7 @@ public class launch {
         String[][] localWorld;
         localWorld = world.newWorld();
         player localPlayer = new player();
-        System.out.println(localPlayer.getName());
-        System.out.println("Exiting Program");
-        System.exit(0);
+        String token = localPlayer.getToken();
+        
     }
 }

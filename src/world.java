@@ -11,9 +11,17 @@ public class world {
         for(int x = 0; x< world.length;x++){
             for(int y = 0;y<world[x].length;y++){
                 Integer localInt = localRandom.nextInt(2 - 0) + 0;
-                world[x][y] = localInt.toString();
+                if(localInt == 1){
+                    world[x][y] = "E";
+                }
+                else{
+                    world[x][y] = "-";
+                }
             }
         }
+        Integer playerX = localRandom.nextInt(defInt-0) + 0;
+        Integer playerY = localRandom.nextInt(defInt -0) + 0;
+        world[playerX][playerY] = "P";
         StringBuilder localBuilder = new StringBuilder();
         for(int x = 0; x< world.length;x++){
             if(x>0){
@@ -40,5 +48,11 @@ public class world {
             worldGen();
         }
         return null;
+    }
+
+    public String getEntity(Integer x, Integer y){
+        String[][] localworld = this.world;
+        String localent = localworld[x-1][y-1];
+        return localent;
     }
 }
