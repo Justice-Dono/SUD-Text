@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class world {
     public String[][] world;
+    public static Integer pX;
+    public static Integer pY;
 
     public static String[][] newWorld(){
         Integer defInt = worldGen();
@@ -20,7 +22,9 @@ public class world {
             }
         }
         Integer playerX = localRandom.nextInt(defInt-0) + 0;
+        pX = playerX;
         Integer playerY = localRandom.nextInt(defInt -0) + 0;
+        pY = playerY;
         world[playerX][playerY] = "P";
         StringBuilder localBuilder = new StringBuilder();
         for(int x = 0; x< world.length;x++){
@@ -54,5 +58,13 @@ public class world {
         String[][] localworld = this.world;
         String localent = localworld[x-1][y-1];
         return localent;
+    }
+
+    public static Integer getPlayerX(){
+        return (pX + 1);
+    }
+
+    public static Integer getPlayerY(){
+        return (pY + 1);
     }
 }

@@ -5,6 +5,7 @@ public class launch {
         localWorld = world.newWorld();
         player localPlayer = new player();
         String token = localPlayer.getToken();
-        
+        System.out.println(world.getPlayerX());
+        System.out.println(world.getPlayerY());
     }
 }
