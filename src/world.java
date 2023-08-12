@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class world {
-    public String[][] world;
+    public static String[][] world;
     public static Integer pX;
     public static Integer pY;
 
@@ -54,12 +54,6 @@ public class world {
         return null;
     }
 
-    public String getEntity(Integer x, Integer y){
-        String[][] localworld = this.world;
-        String localent = localworld[x-1][y-1];
-        return localent;
-    }
-
     public static Integer getPlayerX(){
         return (pX + 1);
     }
@@ -67,4 +61,5 @@ public class world {
     public static Integer getPlayerY(){
         return (pY + 1);
     }
+
 }
