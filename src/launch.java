@@ -82,5 +82,13 @@ public class launch {
         System.out.println(checkEast());
         System.out.println(checkSouth());
         System.out.println(checkWest());
+        world.movePlayerNorth();
+        world.printWorld();
+        world.movePlayerEast();
+        world.printWorld();
+        world.movePlayerSouth();
+        world.printWorld();
+        world.movePlayerWest();
+        world.printWorld();
     }
 }
