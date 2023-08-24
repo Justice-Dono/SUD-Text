@@ -1,6 +1,7 @@
+import java.util.Scanner;
 
 public class launch {
-
+        static Life player;
         static String[][] localWorld;
 
     public static String getEntity(Integer x, Integer y){
@@ -75,20 +76,60 @@ public class launch {
             return result;
         }
     }
-    public static void main(String[] args) throws Exception {
-        world.world = world.newWorld();
-        //Life localPlayer = player.makePlayer();
+    public static void startInputLoop() {
+        Scanner scanner = new Scanner(System.in);
+        boolean continueLoop = true;
+
+        while (continueLoop) {
+            System.out.print("Enter something (type 'Exit' to quit): ");
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("World")){
+                System.out.println("Enter world boundries:");
+                String localInput = scanner.nextLine();
+                Integer localInt = Integer.parseInt(localInput);
+                world.world = world.newWorld(localInt);
+            }
+            if (input.equalsIgnoreCase("Move")) {
+                System.out.println("which cardinal direction would you like to move?");
+                System.out.println("North\nEast\nSouth\nor West?");
+                String localInput = scanner.nextLine();
+                if (localInput.equalsIgnoreCase("North")){
+                    world.movePlayerNorth();
+                    
+                }
+                if (localInput.equalsIgnoreCase("East")){
+                    world.movePlayerEast();
+                    
+                }
+                if (localInput.equalsIgnoreCase("South")){
+                    world.movePlayerSouth();
+                    
+                }
+                if (localInput.equalsIgnoreCase("West")){
+                    
+                }
+                world.printWorld();
+            }
+            if (input.equalsIgnoreCase("Update")){
+                world.printWorld();
+            }
+            if (input.equalsIgnoreCase("Exit")) {
+                continueLoop = false;
+            }
+        }
+
+        System.out.println("Loop stopped.");
+        scanner.close();
+    }
+    public static void main(String[] args) {
+        /**world.world = world.newWorld();
+        Life localPlayer = player.makePlayer();
         System.out.println(checkNorth());
         System.out.println(checkEast());
         System.out.println(checkSouth());
         System.out.println(checkWest());
-        world.movePlayerNorth();
-        world.printWorld();
-        world.movePlayerEast();
-        world.printWorld();
-        world.movePlayerSouth();
-        world.printWorld();
-        world.movePlayerWest();
-        world.printWorld();
+       **/
+        player = Life.makePlayer();
+        startInputLoop();
     }
 }

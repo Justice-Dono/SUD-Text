@@ -1,13 +1,11 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class world {
     public static String[][] world;
     public static Integer pX;
     public static Integer pY;
 
-    public static String[][] newWorld(){
-        Integer defInt = worldGen();
+    public static String[][] newWorld(Integer defInt){
         String[][] world = new String[defInt][defInt];
         Random localRandom = new Random();
         for(int x = 0; x< world.length;x++){
@@ -37,21 +35,6 @@ public class world {
         }
         System.out.println(localBuilder.toString());
         return world;
-    }
-
-    static Integer worldGen(){
-        try (Scanner localScanner = new Scanner(System.in)) {
-            System.out.println("Enter world boundries:");
-            String localString = localScanner.nextLine();
-            Integer localInt = Integer.parseInt(localString);
-            return localInt;
-        } catch (NumberFormatException e) {
-            // Will add nice error message at a later date, maybe loop?
-            System.out.println("Error formatting numbers, make sure you entered an integer value.");
-            e.printStackTrace();
-            worldGen();
-        }
-        return null;
     }
 
     public static Integer getPlayerX(){

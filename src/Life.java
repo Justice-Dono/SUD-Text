@@ -55,4 +55,10 @@ public class Life {
     public void addName(String localName){
         name = localName;
     }
+    
+    public static Life makePlayer(){
+        Life localPlayer = new Life();
+        localPlayer.addToken("P");    
+        return localPlayer;
+    }
 }
