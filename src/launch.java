@@ -116,6 +116,9 @@ public class launch {
             if (input.equalsIgnoreCase("Exit")) {
                 continueLoop = false;
             }
+            if (input.equalsIgnoreCase("Help")){
+                System.out.println("Available Commands:\n"+"World (Generate World)\n"+"Move (Move Character)\n");
+            }
         }
 
         System.out.println("Loop stopped.");

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "launch",
+            "request": "launch",
+            "mainClass": "launch",
+            "projectName": "SUD-Text_fe6adae2"
+        },
+        {
+            "type": "java",
             "name": "Launch launch",
             "request": "launch",
             "mainClass": "launch",
